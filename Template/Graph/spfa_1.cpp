@@ -30,7 +30,7 @@ int spfa() {
 
         st[t] = false;
 
-        for (int i = h[t]; i != -1; i = ne[i]) {
+        for (int i = h[t]; ~i; i = ne[i]) {
             int j = e[i];
             if (dist[j] > dist[t] + w[i]) {
                 dist[j] = dist[t] + w[i];
