@@ -7,7 +7,7 @@ const int N = 50010;
 PII cows[N];
 
 int main() {
-    // ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
+    ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     int n, w, s;
     cin >> n;
     for (int i = 0; i < n; i++) {
@@ -25,6 +25,5 @@ int main() {
         sum += cows[i].first;
     }
     cout << res << endl;
-    system("pause");
     return 0;
 }
