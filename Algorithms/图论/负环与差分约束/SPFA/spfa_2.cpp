@@ -19,7 +19,7 @@ void add(int a, int b, int c) {
 bool spfa() {
     queue<int> q;
 
-    for (int i = 1; i <= n; i++) {
+    for (int i = 1; i <= n; i++) {  //判断是否存在负环要全部入队
         st[i] = true;
         q.push(i);
     }
