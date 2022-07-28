@@ -14,11 +14,11 @@ bool st[N];
 void add(int a, int b) { e[idx] = b, ne[idx] = h[a], h[a] = idx++; }
 
 bool find(int x) {
-    for (int i = h[x]; i != -1; i = ne[i]) {
+    for (int i = h[x]; ~i; i = ne[i]) {
         int j = e[i];
         if (!st[j]) {
             st[j] = true;
-            if (match[j] == 0 || find(match[j])) {
+            if (!match[j] || find(match[j])) {
                 match[j] = x;
                 return true;
             }
