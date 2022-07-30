@@ -2,6 +2,7 @@
 #include <cstring>
 #include <deque>
 #include <iostream>
+// https://www.acwing.com/problem/content/description/177/
 
 #define x first
 #define y second
@@ -37,7 +38,7 @@ int bfs() {
 
         for (int i = 0; i < 4; i++) {
             int a = t.x + dx[i], b = t.y + dy[i];
-            if (a < 0 || a > n || b < 0 || b > m) continue;
+            if (a < 0 || a > n || b < 0 || b > m || st[a][b]) continue;
             int ca = t.x + ix[i], cb = t.y + iy[i];
 
             //堆优化的dijkstra算法中dist[t.x][t.y]这项会和对应的点一起放入优先队列
