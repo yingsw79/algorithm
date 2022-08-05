@@ -15,7 +15,7 @@ int dijkstra() {
     memset(dist, 0x3f, sizeof dist);
     dist[1] = 0;
 
-    for (int i = 0; i < n - 1; i++) {
+    for (int i = 0; i < n; i++) {
         int t = -1;
         for (int j = 1; j <= n; j++)
             if (!st[j] && (t == -1 || dist[t] > dist[j])) t = j;

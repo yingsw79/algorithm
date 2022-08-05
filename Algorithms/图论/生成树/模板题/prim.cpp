@@ -14,7 +14,7 @@ int prim() {
     dist[1] = 0;  // 第一个点一定在最小生成树中
 
     int res = 0;  // 用来存放权值之和
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {  //n轮！
         int t = -1;
         for (int j = 1; j <= n; j++)
             if (!st[j] && (t == -1 || dist[j] < dist[t])) t = j;
