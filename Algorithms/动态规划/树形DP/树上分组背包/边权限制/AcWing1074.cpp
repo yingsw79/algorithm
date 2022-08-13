@@ -3,6 +3,8 @@
 
 using namespace std;
 
+// https://www.luogu.com.cn/problem/P2015
+
 const int N = 110, M = N << 1;
 
 int n, m;
@@ -33,6 +35,6 @@ int main() {
         add(a, b, c), add(b, a, c);
     }
     dfs(1, -1);
-    printf("%d\n", f[1][m]);
+    printf("%d\n", f[1][m]);  //根节点必须保留,故答案在根节点
     return 0;
 }

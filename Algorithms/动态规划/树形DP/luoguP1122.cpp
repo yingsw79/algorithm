@@ -29,7 +29,7 @@ void dfs(int u, int fa) {
 int main() {
     memset(h, -1, sizeof h);
     scanf("%d", &n);
-    for (int i = 1; i <= n; i++) scanf("%d", &f[i]);  //初始化
+    for (int i = 1; i <= n; i++) scanf("%d", &f[i]);  //初始化,根节点必选
     for (int i = 1; i < n; i++) {
         int a, b;
         scanf("%d%d", &a, &b);
