@@ -15,7 +15,7 @@ const int INF = 0x3f3f3f3f, MOD = 1e9 + 7;
 
 const int N = 15;
 int nums[N];
-int f[N][N][2];
+int f[N][N][2];  //标记此时是否已有连续3个6的m也必须记忆化,两种状态是不同的
 
 int dfs(int pos, int cnt, int m, bool isLimit, bool isNum) {
     if (cnt >= 3) m = 1;

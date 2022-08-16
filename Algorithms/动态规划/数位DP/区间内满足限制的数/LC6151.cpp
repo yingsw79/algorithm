@@ -12,7 +12,7 @@ class Solution {
 public:
     int countSpecialNumbers(int n) {
         auto s = to_string(n);
-        int m = s.length(), dp[m][1 << 10];  //不贴上界
+        int m = s.length(), dp[m][1 << 10];  //不贴上界,状态压缩
         memset(dp, -1, sizeof(dp));
         //当 isLimit == true 和 isNum == false 的时候不会重复搜索(!isLimit && isNum),不用记忆化
         //只需要记忆化 i 和 mask 

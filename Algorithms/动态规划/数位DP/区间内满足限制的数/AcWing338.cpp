@@ -24,7 +24,7 @@ int dp(int pos, int cnt, int num, bool isLimit, bool isNum) {
     return res;
 }
 
-int calc(int x, int num) {
+int calc(int x, int num) {  //每个数字单独计算一次
     memset(f, -1, sizeof f);
     n = 0;
     while (x) nums[++n] = x % 10, x /= 10;
