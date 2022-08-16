@@ -9,6 +9,9 @@ const int INF = 0x3f3f3f3f, MOD = 1e9 + 7;
 // https://www.acwing.com/problem/content/description/313/
 // https://www.luogu.com.cn/problem/P4127
 
+// 对于满足同一个条件的多组询问,则我们上次记忆化的f数组依旧能用于下一次,所以f数组只需要初始化一次，
+// 而本题每次数位DP满足的条件都不一样,所以我们每次都需要重新初始化f数组
+
 LL f[20][200][200];
 int p, nums[20];
 

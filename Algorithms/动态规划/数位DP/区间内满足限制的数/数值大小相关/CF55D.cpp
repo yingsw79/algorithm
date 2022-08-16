@@ -10,6 +10,8 @@ const int INF = 0x3f3f3f3f, MOD = 1e9 + 7;
 // https://www.luogu.com.cn/problem/CF55D
 // http://www.manongjc.com/detail/15-kdhlhjscdvcarhp.html
 
+// 对于满足同一个条件的多组询问,则我们上次记忆化的f数组依旧能用于下一次,所以f数组只需要初始化一次，
+
 const int P = 2520;  //1~9的lcm
 LL f[20][2550][50];
 int nums[20], idx[2550];  //离散化lcm
@@ -28,7 +30,7 @@ LL dfs(int pos, int val, int _lcm, bool isLimit, bool isNum) {
 }
 
 void init() {
-    memset(f, -1, sizeof f);
+    memset(f, -1, sizeof f);  //本题只用初始化一次
     int k = 0;
     for (int i = 1; i <= P; i++) {
         if (P % i == 0) idx[i] = k++;

@@ -10,7 +10,7 @@ const int INF = 0x3f3f3f3f, MOD = 1e9 + 7;
 
 class Solution {
 public:
-    int countSpecialNumbers(int n) {
+    int countSpecialNumbers(int n) {  //1~n
         auto s = to_string(n);
         int m = s.length(), dp[m][1 << 10];  //不贴上界,状态压缩
         memset(dp, -1, sizeof(dp));
