@@ -25,13 +25,13 @@ LL dfs(int pos, int pre1, int pre2, bool st, bool four, bool eight, bool isLimit
 }
 
 LL calc(LL x) {
-    memset(f, -1, sizeof f);
     int n = 0;
     while (x) nums[++n] = x % 10, x /= 10;
     return dfs(n, -1, -1, false, false, false, true, false);
 }
 
 int main() {
+    memset(f, -1, sizeof f);
     LL l, r;
     cin >> l >> r;
     cout << calc(r) - calc(l - 1) << endl;
