@@ -38,7 +38,8 @@ int main() {
 
         for (int i = 1; i <= n; i++) f[1][i] = 1;
         for (int i = 2; i <= m; i++) {
-            memset(tr, 0, sizeof tr);
+            // memset(tr, 0, sizeof tr);  // 当开的数组过大时不能直接全部清空
+            for (int j = 1; j <= cnt; ++j) tr[j] = 0;
             for (int j = 1; j <= n; j++) {
                 f[i][j] = getSum(a[j] - 1);
                 add(a[j], f[i - 1][j]);

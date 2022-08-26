@@ -23,9 +23,8 @@ class Solution {
         p.pre = lt.pre, p.suf = rt.suf;
         if (s[lt.r - 1] == s[rt.l - 1]) {
             p.val = max(p.val, lt.suf + rt.pre);
-            int len1 = lt.r - lt.l + 1, len2 = rt.r - rt.l + 1;
-            if (lt.pre == len1) p.pre = len1 + rt.pre;
-            if (rt.suf == len2) p.suf = lt.suf + len2;
+            if (lt.pre == lt.r - lt.l + 1) p.pre += rt.pre;
+            if (rt.suf == rt.r - rt.l + 1) p.suf += lt.suf;
         }
     }
 
@@ -34,19 +33,16 @@ class Solution {
     }
 
     void build(int p, int l, int r) {
-        if (l == r)
-            tr[p] = {l, r, 1, 1, 1};
-        else {
-            tr[p] = {l, r};
-            int mid = l + r >> 1;
-            build(p << 1, l, mid);
-            build(p << 1 | 1, mid + 1, r);
-            pushup(p);
-        }
+        tr[p] = {l, r, 1, 1, 1};
+        if (l == r) return;
+        int mid = l + r >> 1;
+        build(p << 1, l, mid);
+        build(p << 1 | 1, mid + 1, r);
+        pushup(p);
     }
 
     void modify(int p, int x, char c) {
-        if (tr[p].l == x && tr[p].r == x)
+        if (tr[p].l == tr[p].r)
             s[x - 1] = c;
         else {
             int mid = tr[p].l + tr[p].r >> 1;
@@ -69,7 +65,7 @@ class Solution {
                 return query(p << 1 | 1, l, r);
             else {
                 auto lt = query(p << 1, l, r), rt = query(p << 1 | 1, l, r);
-                Node res;
+                Node res{lt.l, rt.r};  // 要初始化区间端点！！！！！！！！
                 pushup(res, lt, rt);
                 return res;
             }
