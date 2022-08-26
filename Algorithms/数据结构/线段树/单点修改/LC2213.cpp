@@ -7,6 +7,8 @@ typedef unsigned long long ULL;
 typedef pair<int, int> PII;
 const int INF = 0x3f3f3f3f, MOD = 1e9 + 7;
 
+// https://leetcode.cn/problems/longest-substring-of-one-repeating-character/
+
 class Solution {
     static const int N = 100010;
     string s;
@@ -56,7 +58,7 @@ class Solution {
         }
     }
 
-    Node query(int p, int l, int r) {
+    Node query(int p, int l, int r) {  // 对任意区间的查询
         if (tr[p].l >= l && tr[p].r <= r)
             return tr[p];
         else {
@@ -82,7 +84,8 @@ public:
         vector<int> res(m);
         for (int i = 0; i < m; i++) {
             modify(1, queryIndices[i] + 1, queryCharacters[i]);
-            res[i] = query(1, 1, n).val;
+            // res[i] = query(1, 1, n).val;
+            res[i] = tr[1].val;  // 本题可以不用写query函数,因为每次都查询的是区间[1,n]
         }
         return res;
     }

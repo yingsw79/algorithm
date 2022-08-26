@@ -49,7 +49,7 @@ void modify(int u, int x, int v) {
     }
 }
 
-Node query(int u, int l, int r) {  // l,r不一定是树上节点存储的区间！！！！
+Node query(int u, int l, int r) {  // l,r不一定是树上节点存储的区间
     if (tr[u].l >= l && tr[u].r <= r)
         return tr[u];
     else {

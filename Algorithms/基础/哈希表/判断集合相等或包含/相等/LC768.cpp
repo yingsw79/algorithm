@@ -16,17 +16,8 @@ public:
         unordered_map<int, int> cnt;
         int res = 0;
         for (int i = 0, diff = 0; i < arr.size(); i++) {
-            int x = arr[i], y = nums[i];
-            if (cnt[x] == 1)
-                diff--;
-            else if (cnt[x] == 0)
-                diff++;
-            cnt[x]--;
-            if (cnt[y] == -1)
-                diff--;
-            else if (cnt[y] == 0)
-                diff++;
-            cnt[y]++;
+            if (++cnt[nums[i]] == 1) ++diff;
+            if (--cnt[arr[i]] == 0) --diff;
             if (!diff) res++;
         }
         return res;
