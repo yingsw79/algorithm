@@ -43,7 +43,7 @@ public:
         int f[k + 1][n], res = 0;
         memset(f, 0, sizeof f);
         for (int i = 1; i <= k; ++i) {
-            for (int j = 0; j <= m; ++j) tr[j] = 0;
+            // for (int j = 0; j <= m; ++j) tr[j] = 0;
             for (int j = 0; j < n; ++j) {
                 f[i][j] = query(st[j] - 1) + events[j][2];
                 res = max(res, f[i][j]);
