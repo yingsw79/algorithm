@@ -1,4 +1,4 @@
-{   
+{
     "files.associations": {
         "array": "cpp",
         "atomic": "cpp",
@@ -75,5 +75,8 @@
     "editor.formatOnType": true,
     "editor.formatOnSave": true,
     "C_Cpp.clang_format_style": "{BasedOnStyle: Google, AccessModifierOffset: -4, IndentWidth: 4, ColumnLimit: 0}",
-    "python.formatting.autopep8Args": ["--max-line-length=150"]
+    "python.formatting.autopep8Args": [
+        "--max-line-length=150"
+    ],
+    "workbench.activityBar.visible": true
 }

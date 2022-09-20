@@ -9,7 +9,7 @@ const int INF = 0x3f3f3f3f, MOD = 1e9 + 7;
 
 // https://leetcode.cn/problems/smallest-subarrays-with-maximum-bitwise-or/
 // 区间可重复贡献问题:区间按位或
-// st表+二分
+// st表+二分(递增)
 class Solution {
 public:
     vector<int> smallestSubarrays(vector<int>& nums) {
@@ -41,6 +41,11 @@ public:
         return res;
     }
 };
+
+// https://leetcode.cn/problems/find-a-value-of-a-mysterious-function-closest-to-target/
+// 区间可重复贡献问题:区间按位与
+// st表+二分(递减)
+
 
 int main() {
     return 0;
