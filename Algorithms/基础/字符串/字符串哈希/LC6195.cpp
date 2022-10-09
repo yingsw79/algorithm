@@ -22,7 +22,7 @@ public:
         int n = s.length();
         h.resize(n + 1), p.resize(n + 1);
         p[0] = 1;
-        for (int i = 1; i <= n; i++) {  // 字符串哈希
+        for (int i = 1; i <= n; ++i) {  // 字符串哈希
             h[i] = h[i - 1] * 131 + s[i - 1];
             p[i] = p[i - 1] * 131;
         }
