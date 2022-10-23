@@ -10,6 +10,8 @@ int h[N], e[M], w[M], ne[M], idx;
 int cl[N];
 int n, m;
 
+// https://www.acwing.com/problem/content/259/
+
 void add(int a, int b, int c) {
     e[idx] = b, w[idx] = c, ne[idx] = h[a], h[a] = idx++;
 }

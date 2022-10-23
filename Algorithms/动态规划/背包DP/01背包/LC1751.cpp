@@ -6,6 +6,8 @@ typedef pair<int, int> PII;
 const int INF = 0x3f3f3f3f, MOD = 1e9 + 7;
 
 // https://leetcode.cn/problems/maximum-number-of-events-that-can-be-attended-ii/
+// https://leetcode.cn/problems/maximum-profit-in-job-scheduling/
+// https://leetcode.cn/problems/maximum-earnings-from-taxi/
 
 class Solution1 {
 public:

@@ -13,7 +13,8 @@ class Solution {
 public:
     int findIntegers(int n) {
         int nums[35], f[35][3];
-        memset(f, -1, sizeof f);
+        
+        
         int len = 0;
         while (n) nums[++len] = n & 1, n >>= 1;
         function<int(int, int, bool, bool)> dfs = [&](int pos, int cnt, bool isLimit, bool isNum) -> int {
