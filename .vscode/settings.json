@@ -70,7 +70,21 @@
         "shared_mutex": "cpp",
         "thread": "cpp",
         "typeindex": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "cassert": "cpp",
+        "ccomplex": "cpp",
+        "cerrno": "cpp",
+        "cfloat": "cpp",
+        "ciso646": "cpp",
+        "climits": "cpp",
+        "cstdalign": "cpp",
+        "cstdbool": "cpp",
+        "ctgmath": "cpp",
+        "filesystem": "cpp",
+        "ios": "cpp",
+        "locale": "cpp",
+        "queue": "cpp",
+        "stack": "cpp"
     },
     "editor.formatOnType": true,
     "editor.formatOnSave": true,
@@ -78,5 +92,6 @@
     "python.formatting.autopep8Args": [
         "--max-line-length=150"
     ],
-    "workbench.activityBar.visible": true
+    "workbench.activityBar.visible": true,
+    "python.analysis.typeCheckingMode": "off"
 }

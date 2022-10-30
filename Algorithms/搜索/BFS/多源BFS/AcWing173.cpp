@@ -1,10 +1,11 @@
 #include <algorithm>
 #include <cstring>
 #include <iostream>
-
 using namespace std;
-
 typedef pair<int, int> PII;
+
+// https://www.acwing.com/problem/content/175/
+// 虚拟源点（起点全部进队）转化为单源最短路问题
 
 const int N = 1010, M = N * N;
 
