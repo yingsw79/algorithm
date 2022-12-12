@@ -1,4 +1,5 @@
 from collections import Counter
+from itertools import pairwise
 from math import sqrt
 from typing import List
 
@@ -50,4 +51,5 @@ class Solution:
                 if quality > max_quality:
                     cx, cy, max_quality = x, y, quality
         return [cx, cy]
+
 
