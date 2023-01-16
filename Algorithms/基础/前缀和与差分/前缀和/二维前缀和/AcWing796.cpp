@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// https://www.acwing.com/problem/content/798/
+
 const int N = 1010;
 
 int a[N][N], s[N][N];

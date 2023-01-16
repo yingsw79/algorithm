@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// https://www.acwing.com/problem/content/description/800/
+
 const int N = 1010;
 
 int n, m, q;
@@ -25,7 +27,7 @@ int main() {
 
     for (int i = 1; i <= n; i++)
         for (int j = 1; j <= m; j++)
-            b[i][j] += b[i - 1][j] + b[i][j - 1] - b[i - 1][j - 1];  //对差分数组求前缀和
+            b[i][j] += b[i - 1][j] + b[i][j - 1] - b[i - 1][j - 1];  // 对差分数组求前缀和
 
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) printf("%d ", a[i][j] + b[i][j]);

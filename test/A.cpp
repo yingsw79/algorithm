@@ -8,5 +8,6 @@ typedef pair<int, int> PII;
 const int INF = 0x3f3f3f3f, MOD = 1e9 + 7;
 
 int main() {
+    system("pause");
     return 0;
 }
