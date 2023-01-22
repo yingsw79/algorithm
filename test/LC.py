@@ -51,6 +51,3 @@ class Solution:
                 if quality > max_quality:
                     cx, cy, max_quality = x, y, quality
         return [cx, cy]
-
-
-
