@@ -13,22 +13,20 @@ class Solution {
 public:
     long long maxScore(vector<int>& nums1, vector<int>& nums2, int k) {
         int n = nums1.size();
-        vector<int> idx(n);
+        vector<int> idx(n);  // 索引数组
         iota(idx.begin(), idx.end(), 0);
         sort(idx.begin(), idx.end(), [&](int i, int j) { return nums2[i] > nums2[j]; });
         priority_queue<int, vector<int>, greater<int>> pq;
         long long s = 0, res = 0;
-        for (int i = 0; i < n; i++) {
+        for (int x : idx) {
             if (pq.size() > k - 1) {
                 s -= pq.top();
                 pq.pop();
             }
-            int t = nums1[idx[i]];
+            int t = nums1[x];
             pq.push(t);
             s += t;
-            if (pq.size() == k) {
-                res = max(res, s * nums2[idx[i]]);
-            }
+            if (pq.size() == k) res = max(res, s * nums2[x]);
         }
         return res;
     }
