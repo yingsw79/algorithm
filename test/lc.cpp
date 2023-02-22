@@ -24,6 +24,26 @@ struct TreeNode {
 };
 
 
+
+class Solution {
+public:
+    int minimizeSum(vector<int>& nums) {
+        int n = nums.size();
+        sort(nums.begin(), nums.end());
+        return min(nums.back() - nums[2], nums[n - 3] - nums[0]);
+    }
+};
+
+class Solution {
+public:
+    int minImpossibleOR(vector<int>& nums) {
+        int mi = *min_element(nums.begin(), nums.end());
+        if (mi != 1) return mi - 1;
+        for (int i = 0; i < 32; i++) {
+        }
+    }
+};
+
 int main() {
     return 0;
 }
