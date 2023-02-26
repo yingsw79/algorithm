@@ -59,33 +59,3 @@ func VowelStrings(words []string, queries [][]int) []int {
 	}
 	return ans
 }
-
-func minImpossibleOR(nums []int) int {
-	bt := [32]byte{}
-	sort.Ints(nums)
-	i, t := 0, 1
-	if nums[0] == t {
-		bt[0] = 1
-	}
-	for {
-		for i < len(nums) && nums[i] < t {
-			for j := 0; j < 31; j++ {
-				if (nums[i]>>j)&1 == 1 {
-					bt[j] = 1
-				}
-			}
-			i++
-		}
-		if i >= len(nums) || nums[i] > t {
-			return t
-		}
-
-		for j := 0; nums[i] != 0; nums[i] >>= 1 {
-			if bt[j] == 0 {
-				return t | (1 << j)
-			}
-			j++
-		}
-		t <<= 1
-	}
-}

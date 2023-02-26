@@ -1,6 +1,8 @@
 from collections import Counter, defaultdict
+from functools import cache
+from heapq import heappop, heappush
 from itertools import pairwise
-from math import sqrt
+from math import inf, sqrt
 import math
 from typing import List
 
@@ -69,3 +71,34 @@ class Solution:
                 ans.append(name)
         ans.sort()
         return ans
+
+
+dirs = [[0, 1], [0, -1], [1, 0], [-1, 0]]
+
+
+class Solution:
+
+    def minimumTime(self, grid: List[List[int]]) -> int:
+        n, m = len(grid), len(grid[0])
+        if grid[0][1] > 1 and grid[1][0] > 1: return -1
+
+        ans = [[inf] * m for _ in range(n)]
+        ans[0][0] = 0
+        hpq = [[0, [0, 0]]]
+
+        while hpq:
+            dist, (x, y) = heappop(hpq)
+
+            if x == n - 1 and y == m - 1: return dist
+
+            for dx, dy in dirs:
+                new_x = x + dx
+                new_y = y + dy
+
+                if 0 <= new_x < n and 0 <= new_y < m:
+                    new_dist = max(dist + 1, grid[new_x][new_y])
+                    new_dist += (new_dist - new_x - new_y) % 2  # 调整奇偶性
+
+                    if new_dist < ans[new_x][new_y]:
+                        ans[new_x][new_y] = new_dist
+                        heappush(hpq, [new_dist, [new_x, new_y]])
