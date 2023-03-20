@@ -3,6 +3,7 @@ package main
 import "math"
 
 // https://leetcode.cn/problems/longest-well-performing-interval/
+// https://leetcode.cn/problems/find-longest-subarray-lcci/
 
 func longestWPI(hours []int) (res int) {
 	const (

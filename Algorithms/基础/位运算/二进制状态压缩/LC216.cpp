@@ -7,6 +7,7 @@ typedef pair<int, int> PII;
 const int INF = 0x3f3f3f3f, MOD = 1e9 + 7;
 
 // https://leetcode.cn/problems/combination-sum-iii/
+// https://leetcode.cn/problems/the-number-of-beautiful-subsets/
 
 class Solution {
 public:
