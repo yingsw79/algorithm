@@ -5,6 +5,7 @@ from itertools import pairwise
 from math import inf, sqrt
 import math
 from typing import List
+import re
 
 
 class Solution:
