@@ -43,3 +43,7 @@ func PickGifts(gifts []int, k int) (res int64) {
 	}
 	return
 }
+
+// func specialPerm(nums []int) int {
+
+// }
