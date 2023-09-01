@@ -41,3 +41,41 @@ public:
 int main() {
     return 0;
 }
+
+// const N int = 10010
+
+// type SummaryRanges []int
+
+// func (sr SummaryRanges) find(x int) int {
+// 	if sr[x] == x {
+// 		return x
+// 	}
+// 	sr[x] = sr.find(sr[x])
+// 	return sr[x]
+// }
+
+// func Constructor() SummaryRanges {
+// 	sr := make([]int, N)
+// 	for i := range sr {
+// 		sr[i] = i
+// 	}
+// 	return sr
+// }
+
+// func (sr SummaryRanges) AddNum(x int) {
+// 	if sr[x] == x {
+// 		sr[x] = sr.find(x + 1)
+// 	}
+// }
+
+// func (sr SummaryRanges) GetIntervals() (res [][]int) {
+// 	for i := 0; i < N; i++ {
+// 		if sr[i] == i {
+// 			continue
+// 		}
+// 		j := sr.find(i)
+// 		res = append(res, []int{i, j - 1})
+// 		i = j
+// 	}
+// 	return
+// }
