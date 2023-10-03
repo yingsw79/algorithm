@@ -7,8 +7,9 @@ typedef pair<int, int> PII;
 const int INF = 0x3f3f3f3f, MOD = 1e9 + 7;
 
 // https://leetcode.cn/problems/number-of-students-doing-homework-at-a-given-time/
+// https://leetcode.cn/problems/number-of-flowers-in-full-bloom/description/?envType=daily-question&envId=2023-09-28
 
-//区间[l,r]加1,单点查询,不用离散化的方法！！！！！
+// 区间[l,r]加1,单点查询,不用离散化的方法！！！！！
 class Solution {
 public:
     int busyStudent(vector<int>& startTime, vector<int>& endTime, int queryTime) {
@@ -20,7 +21,7 @@ public:
     }
 };
 
-//差分需要离散化
+// 差分需要离散化
 class Solution {
 public:
     int busyStudent(vector<int>& startTime, vector<int>& endTime, int queryTime) {
