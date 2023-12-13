@@ -18,8 +18,7 @@ public:
         sort(idx.begin(), idx.end(), [&](int i, int j) {  // 从大到小处理
             return nums[i] > nums[j];
         });
-        set<int> st;
-        st.insert({n + 1, n + 2});  // 哨兵
+        set<int> st{n + 1, n + 2};  // 哨兵
         for (int i = 0; i < n; ++i) {
             int j = i + 1;
             while (j < n && nums[idx[j]] == nums[idx[i]]) j++;

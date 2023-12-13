@@ -3,6 +3,7 @@ package main
 import "sort"
 
 // https://leetcode.cn/problems/maximize-the-profit-as-the-salesman/description/
+// https://leetcode.cn/problems/maximum-earnings-from-taxi/?envType=daily-question&envId=2023-12-08
 
 func maximizeTheProfit(n int, offers [][]int) (res int) {
 	sort.Slice(offers, func(i, j int) bool { return offers[i][1] < offers[j][1] })

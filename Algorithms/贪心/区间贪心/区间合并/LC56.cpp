@@ -4,18 +4,20 @@ using namespace std;
 typedef long long LL;
 typedef pair<int, int> PII;
 const int INF = 0x3f3f3f3f, MOD = 1e9 + 7;
+
 // https://leetcode.cn/problems/merge-intervals/
 
 class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
         sort(intervals.begin(), intervals.end());
-        vector<vector<int>> res;
+        vector<vector<int>> res{intervals[0]};
         for (auto& interval : intervals) {
-            if (res.empty() || interval[0] > res.back()[1]) {
-                res.push_back(interval);
-            } else {
-                res.back()[1] = max(res.back()[1], interval[1]);
+            auto& t = res.back();
+            if (interval[0] > t[1]) {
+                res.push_back(move(interval));
+            } else if (interval[1] > t[1]) {
+                t[1] = interval[1];
             }
         }
         return res;
