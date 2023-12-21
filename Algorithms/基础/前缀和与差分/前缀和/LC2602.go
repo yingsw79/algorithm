@@ -4,6 +4,7 @@ import "sort"
 
 // https://leetcode.cn/problems/minimum-operations-to-make-all-array-elements-equal/
 // https://leetcode.cn/problems/sum-of-distances/
+// https://leetcode.cn/problems/apply-operations-to-maximize-frequency-score/description/
 
 func minOperations(nums []int, queries []int) []int64 {
 	sort.Ints(nums)

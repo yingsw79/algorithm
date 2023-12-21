@@ -89,11 +89,13 @@
     "editor.formatOnType": true,
     "editor.formatOnSave": true,
     "C_Cpp.clang_format_style": "{BasedOnStyle: Google, AccessModifierOffset: -4, IndentWidth: 4, ColumnLimit: 0}",
-    "python.formatting.provider": "yapf",
-    "python.formatting.yapfArgs": [
-        "--style",
-        "{column_limit: 200}"
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
+    "black-formatter.args": [
+        "--line-length",
+        "150",
     ],
-    "workbench.activityBar.visible": true,
     "python.analysis.typeCheckingMode": "off"
 }

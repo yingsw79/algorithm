@@ -11,6 +11,37 @@ const int INF = 0x3f3f3f3f, MOD = 1e9 + 7;
 
 class Solution {
 public:
+    using LL = long long;
+    long long maximumSumOfHeights(vector<int>& maxHeights) {
+        int n = maxHeights.size();
+        auto f = [&](vector<LL>& arr) {
+            stack<int> st;
+            for (int i = 0; i < n; i++) {
+                while (!st.empty() && maxHeights[i] < maxHeights[st.top()]) {
+                    st.pop();
+                }
+                if (!st.empty()) {
+                    arr[i] = arr[st.top()] + (LL)(i - st.top()) * maxHeights[i];
+                } else {
+                    arr[i] = (LL)(i + 1) * maxHeights[i];
+                }
+                st.push(i);
+            }
+        };
+        vector<LL> pre(n), suf(n);
+        f(pre);
+        reverse(maxHeights.begin(), maxHeights.end());
+        f(suf);
+        LL res = 0;
+        for (int i = n - 1; i >= 0; i--) {
+            res = max(res, pre[n - i - 1] + suf[i] - maxHeights[i]);
+        }
+        return res;
+    }
+};
+
+class Solution {
+public:
     typedef long long LL;
     long long maximumSumOfHeights(vector<int>& maxHeights) {
         LL res = 0;
