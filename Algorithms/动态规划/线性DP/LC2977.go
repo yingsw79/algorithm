@@ -69,8 +69,7 @@ func minimumCost(source string, target string, original []string, changed []stri
 			if i < k {
 				continue
 			}
-			s, t := source[i-k:i], target[i-k:i]
-			if strs[s] && strs[t] {
+			if s, t := source[i-k:i], target[i-k:i]; strs[s] && strs[t] {
 				f[i] = min(f[i], f[i-k]+d[index[s]][index[t]])
 			}
 		}
