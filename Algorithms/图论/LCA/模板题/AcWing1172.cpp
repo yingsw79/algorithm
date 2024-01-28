@@ -16,7 +16,7 @@ void add(int a, int b) {
     e[idx] = b, ne[idx] = h[a], h[a] = idx++;
 }
 
-void bfs(int root) {  //预处理O(nlogn)
+void bfs(int root) {  // 预处理O(nlogn)
     depth[0] = 0, depth[root] = 1;
     int hh = 0, tt = 0;
     q[0] = root;
@@ -35,13 +35,13 @@ void bfs(int root) {  //预处理O(nlogn)
     }
 }
 
-int lca(int a, int b) {  //树上倍增法O(logn)
+int lca(int a, int b) {  // 树上倍增法O(logn)
     if (depth[a] < depth[b]) swap(a, b);
-    for (int k = 15; k >= 0; k--)
+    for (int k = 15; k >= 0; k--)  // 跳到同一层（二进制拆分）
         if (depth[fa[a][k]] >= depth[b])
             a = fa[a][k];
     if (a == b) return a;
-    for (int k = 15; k >= 0; k--)
+    for (int k = 15; k >= 0; k--)  // 一起跳到LCA的下一层（二进制拆分）
         if (fa[a][k] != fa[b][k]) {
             a = fa[a][k];
             b = fa[b][k];
