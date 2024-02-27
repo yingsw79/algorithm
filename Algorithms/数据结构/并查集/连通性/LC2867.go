@@ -35,8 +35,7 @@ func countPaths(n int, edges [][]int) (res int64) {
 		g[a] = append(g[a], b)
 		g[b] = append(g[b], a)
 		if st[a] && st[b] {
-			a, b = find(p[a]), find(p[b])
-			if a != b {
+			if a, b = find(a), find(b); a != b {
 				p[a] = b
 				sz[b] += sz[a]
 			}
