@@ -2,6 +2,7 @@ package main
 
 // https://leetcode.cn/problems/maximum-earnings-from-taxi/description/?envType=daily-question&envId=2023-12-08
 // https://leetcode.cn/problems/maximize-the-profit-as-the-salesman/description/
+// https://leetcode.cn/problems/maximum-profit-in-job-scheduling/description/?envType=daily-question&envId=2024-05-04
 
 func maxTaxiEarnings(n int, rides [][]int) int64 {
 	type pair struct{ x, y int }
