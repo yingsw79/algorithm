@@ -6,7 +6,6 @@ from typing import List
 
 
 class Solution:
-
     def waysToReachTarget(self, target: int, types: List[List[int]]) -> int:
         MOD = int(1e9 + 7)
         n = len(types)
