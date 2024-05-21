@@ -1,3 +1,3 @@
-module Algorithm
+module algorithm
 
 go 1.21
