@@ -5,16 +5,16 @@ package main
 func numberOfSubarrays(nums []int) (res int64) {
 	pos := map[int][]int{}
 	left := make([]int, len(nums))
-	q := []int{}
+	st := []int{}
 	for i, v := range nums {
-		for len(q) > 0 && v >= nums[q[len(q)-1]] {
-			q = q[:len(q)-1]
+		for len(st) > 0 && v >= nums[st[len(st)-1]] {
+			st = st[:len(st)-1]
 		}
 		left[i] = -1
-		if len(q) > 0 {
-			left[i] = q[len(q)-1]
+		if len(st) > 0 {
+			left[i] = st[len(st)-1]
 		}
-		q = append(q, i)
+		st = append(st, i)
 		pos[v] = append(pos[v], i)
 	}
 	for _, idx := range pos {
