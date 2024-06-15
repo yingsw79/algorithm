@@ -7,6 +7,8 @@ const int INF = 0x3f3f3f3f, MOD = 1e9 + 7;
 const int N = 100010;
 PII q[N];
 
+// https://www.acwing.com/problem/content/description/910/
+
 int main() {
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
 

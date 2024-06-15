@@ -1,6 +1,7 @@
 package main
 
 // https://leetcode.cn/problems/extra-characters-in-a-string/description/?envType=daily-question&envId=2024-01-09
+// https://leetcode.cn/problems/word-break/description/?envType=study-plan-v2&envId=top-interview-150
 
 type node struct {
 	next  [26]*node
