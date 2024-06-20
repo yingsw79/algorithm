@@ -4,13 +4,11 @@ package main
 
 func findKthLargest(nums []int, k int) int {
 	n := len(nums)
-
-	var topK func(int, int) int
-	topK = func(l, r int) int {
+	var qSort func(int, int) int
+	qSort = func(l, r int) int {
 		if l >= r {
 			return nums[l]
 		}
-
 		i, j, x := l-1, r+1, nums[(l+r)>>1]
 		for i < j {
 			for i++; nums[i] < x; i++ {
@@ -21,12 +19,10 @@ func findKthLargest(nums []int, k int) int {
 				nums[i], nums[j] = nums[j], nums[i]
 			}
 		}
-
 		if n-k <= j {
-			return topK(l, j)
+			return qSort(l, j)
 		}
-		return topK(j+1, r)
+		return qSort(j+1, r)
 	}
-
-	return topK(0, n-1)
+	return qSort(0, n-1)
 }
