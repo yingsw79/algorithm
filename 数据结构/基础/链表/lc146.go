@@ -22,22 +22,22 @@ func Constructor(capacity int) LRUCache {
 }
 
 func (this *LRUCache) Get(key int) int {
-	nd := this.get(key)
-	if nd != nil {
-		return nd.value
+	x := this.get(key)
+	if x != nil {
+		return x.value
 	}
 	return -1
 }
 
 func (this *LRUCache) Put(key int, value int) {
-	nd := this.get(key)
-	if nd != nil {
-		nd.value = value
+	x := this.get(key)
+	if x != nil {
+		x.value = value
 		return
 	}
-	nd = &node{key: key, value: value}
-	this.pos[key] = nd
-	this.insert(nd)
+	x = &node{key: key, value: value}
+	this.pos[key] = x
+	this.insert(x)
 	if len(this.pos) > this.capacity {
 		tail := this.dummy.prev // 循环双链表
 		remove(tail)
@@ -46,23 +46,25 @@ func (this *LRUCache) Put(key int, value int) {
 }
 
 func (this *LRUCache) get(key int) *node {
-	nd := this.pos[key]
-	if nd == nil {
+	x := this.pos[key]
+	if x == nil {
 		return nil
 	}
-	remove(nd)
-	this.insert(nd)
-	return nd
+	remove(x)
+	this.insert(x)
+	return x
 }
 
-func (this *LRUCache) insert(nd *node) {
-	nd.next = this.dummy.next
-	nd.prev = this.dummy
-	nd.prev.next = nd
-	nd.next.prev = nd
+func (this *LRUCache) insert(x *node) {
+	x.next = this.dummy.next
+	x.prev = this.dummy
+	x.prev.next = x
+	x.next.prev = x
 }
 
-func remove(nd *node) {
-	nd.prev.next = nd.next
-	nd.next.prev = nd.prev
+func remove(x *node) {
+	x.prev.next = x.next
+	x.next.prev = x.prev
+	x.prev = nil
+	x.next = nil
 }

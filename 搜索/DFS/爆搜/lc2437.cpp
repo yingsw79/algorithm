@@ -24,10 +24,10 @@ public:
                 for (char c = '0'; c <= '9'; ++c) {
                     time[u] = c;
                     dfs(u + 1);
-                    time[u] = '?';  // ！！！
+                    time[u] = '?';
                 }
             } else
-                dfs(u + 1);  // ！！！
+                dfs(u + 1);
         };
         dfs(0);
         return res;
