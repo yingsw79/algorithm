@@ -22,28 +22,6 @@ public:
     }
 };
 
-// class Solution {
-// public:
-//     bool canBeEqual(vector<int>& target, vector<int>& arr) {
-//         unordered_map<int, int> mp;
-//         int diff = 0, n = target.size();
-//         for (int i = 0; i < n; i++) {
-//             int x = target[i], y = arr[i];
-//             if (mp[x] == 0)
-//                 ++diff;
-//             else if (mp[x] == -1)
-//                 --diff;
-//             ++mp[x];
-//             if (mp[y] == 1)
-//                 --diff;
-//             else if (mp[y] == 0)
-//                 ++diff;
-//             --mp[y];
-//         }
-//         return diff == 0;
-//     }
-// };
-
 int main() {
     return 0;
 }
