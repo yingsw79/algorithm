@@ -20,38 +20,32 @@ func (nd *node) insert(word string) {
 	p.isEnd = true
 }
 
-type trie struct {
-	root, p *node
-}
-
-func (tr *trie) query(c byte) bool {
-	c -= 'a'
-	if tr.p == nil || tr.p.next[c] == nil {
-		tr.p = nil
-		return false
+func (nd *node) query(s string, x int) (res []int) {
+	p := nd
+	for i := x; i >= 0; i-- {
+		c := s[i] - 'a'
+		if p.next[c] == nil {
+			break
+		}
+		p = p.next[c]
+		if p.isEnd {
+			res = append(res, i)
+		}
 	}
-	tr.p = tr.p.next[c]
-	return tr.p.isEnd
+	return
 }
 
 func minExtraChar(s string, dictionary []string) int {
 	n := len(s)
 	f := make([]int, n+1)
-	root := &node{}
+	tr := &node{}
 	for _, v := range dictionary {
-		root.insert(v)
+		tr.insert(v)
 	}
-	tr := &trie{root: root}
-
 	for i := 1; i <= n; i++ {
-		f[i] = i
-		tr.p = root
-		for j := i - 1; j >= 0; j-- {
-			if tr.query(s[j]) { // trie 优化
-				f[i] = min(f[i], f[j])
-			} else {
-				f[i] = min(f[i], f[j]+i-j)
-			}
+		f[i] = f[i-1] + 1
+		for _, j := range tr.query(s, i-1) {
+			f[i] = min(f[i], f[j])
 		}
 	}
 	return f[n]
@@ -65,12 +59,10 @@ func minExtraChar(s string, dictionary []string) int {
 // 	}
 // 	f := make([]int, n+1)
 // 	for i := 1; i <= n; i++ {
-// 		f[i] = i
+// 		f[i] = f[i-1] + 1
 // 		for j := 0; j < i; j++ {
 // 			if set[s[j:i]] { // trie 优化
 // 				f[i] = min(f[i], f[j])
-// 			} else {
-// 				f[i] = min(f[i], f[j]+i-j)
 // 			}
 // 		}
 // 	}

@@ -3,6 +3,7 @@ package main
 import "math"
 
 // https://leetcode.cn/problems/find-subarray-with-bitwise-and-closest-to-k/description/
+// https://leetcode.cn/problems/number-of-subarrays-with-and-value-of-k/description/
 
 func minimumDifference(nums []int, k int) int {
 	res := math.MaxInt
