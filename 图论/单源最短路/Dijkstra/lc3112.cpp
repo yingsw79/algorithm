@@ -31,13 +31,10 @@ public:
         while (!pq.empty()) {
             auto [d, u] = pq.top();
             pq.pop();
-            if (st[u]) {
-                continue;
-            }
+            if (st[u]) continue;
             st[u] = true;
             for (auto& [v, w] : g[u]) {
-                int nd = d + w;
-                if (nd < disappear[v] && nd < dist[v]) {
+                if (int nd = d + w; nd < disappear[v] && nd < dist[v]) {
                     dist[v] = nd;
                     pq.emplace(nd, v);
                 }

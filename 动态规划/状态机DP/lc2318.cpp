@@ -7,6 +7,7 @@ typedef pair<int, int> PII;
 const int INF = 0x3f3f3f3f, MOD = 1e9 + 7;
 
 // https://leetcode.cn/problems/number-of-distinct-roll-sequences/
+// https://atcoder.jp/contests/abc362/tasks/abc362_e
 
 class Solution {
 public:
