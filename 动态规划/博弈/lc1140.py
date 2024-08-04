@@ -5,7 +5,6 @@ from typing import List
 
 
 class Solution:
-
     def stoneGameII(self, s: List[int]) -> int:
         n = len(s)
         for i in range(n - 2, -1, -1):
